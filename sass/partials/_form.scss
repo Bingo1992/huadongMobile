@@ -1,0 +1,113 @@
+@charset "utf-8";
+/*----表单----*/
+.form-list {
+    li {
+        @extend .list-box;
+        font-size: $md-font;
+    }
+    label {
+        width: 80px;
+        display: block;
+    }
+    input {
+        @extend .list-info;
+        @include height(24px);
+    }
+    .slide-btn {
+    	margin: -3px 0;
+    }
+    // [class^="btn-"] {
+    // 	margin: 0;
+    // 	@include height(34px);
+    // }
+}
+/*地区简写*/
+.region {
+	@include btnBorder(28px,#ccc);
+	color: #333;
+	padding: 0 4px;
+	span {letter-spacing: .1rem;}
+	i{
+		line-height: 30px !important;
+		font-size: 20px;
+		float: right;
+	}
+}
+/*select下拉框*/
+.select-box {
+    position: relative;
+    select {
+	    position: relative;
+	    z-index: 2;
+	    width: 100%;
+	    @include height(24px);
+	}
+    .icon-right {
+    	position: absolute;
+	    right: 0;
+	    top: 50%;
+	    margin-top: -12px;
+    }
+    
+}
+
+/*上传文件*/
+input[type="file"] {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    display: block;
+    z-index: 3;
+}
+
+.upload-file {
+	position: relative;
+    overflow: hidden;
+    height: 24px;
+	i{
+		font-size:26px;
+		margin-right: 0 !important;
+		color: #999;
+	}   
+}
+/*日期*/
+.date {
+	position: relative;
+	color: #999;
+	&.getDate {color: #333;}
+	input {
+		@include height(24px);
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		z-index: 2;
+	}
+	.icon-right {
+    	position: absolute;
+	    right: 0;
+	    top: 50%;
+	    margin-top: -12px;
+    }
+}
+
+/*验证码*/
+li.vcode-box{
+	padding-top: 0;
+	padding-bottom: 0;
+}
+.btn-getCode {
+	@include height;
+	position: relative;
+	padding-left: $gauge;
+	color: $color-theme;
+	display: block;
+	&.disbtn {
+		color: $color-gray;
+		pointer-events: none;
+	}
+}

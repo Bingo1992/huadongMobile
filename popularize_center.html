@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <title>推广中心</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+
+<body>
+    <!-- 上下结构列表 -->
+    <div class="fixed-top">
+        <div class="pop-sort list-box bg-show">
+            <div class="list-info">推广分类</div>
+            <p class="font-gray slideValue">全部</p>
+            <i class="icon-right"></i>
+        </div>
+    </div>
+    <div class="banner-t">
+        <div class="border-list">
+            <ul>
+                <li>
+                    <a class="list-box" href="product_detail.html">
+                        <div class="list-img">
+                            <img src="images/s1.jpg">
+                        </div>
+                        <div class="list-info">
+                            <h4 class="nowrap-2">全国手机充值100元电信话费直充快充电信充值</h4>
+                            <p class="nowrap-2">活动时间：<span>2016.08.13-2016.09.13</span></p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="list-box" href="product_detail.html">
+                        <div class="list-img">
+                            <img src="images/s1.jpg">
+                        </div>
+                        <div class="list-info">
+                            <h4 class="nowrap-2">全国手机充值100元电信话费直充快充电信充值</h4>
+                            <p class="nowrap-2">活动时间：<span>2016.08.13-2016.09.13</span></p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="list-box" href="product_detail.html">
+                        <div class="list-img">
+                            <img src="images/s1.jpg">
+                        </div>
+                        <div class="list-info">
+                            <h4 class="nowrap-2">全国手机充值100元电信话费直充快充电信充值</h4>
+                            <p class="nowrap-2">活动时间：<span>2016.08.13-2016.09.13</span></p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <p class="getmore">点击加载更多</p>
+    </div>
+        
+
+    <!-- 推广分类筛选遮罩 -->
+    <div class="dialog-list">
+        <a class="return-back border-bottom">
+            <i class="icon-left"></i>
+            <h4>筛选</h4>
+        </a>
+        <ul class="dialog-end-list whole-list">
+            <li>全部</li>
+            <li>信用卡</li>
+            <li>保险优惠</li>
+            <li>手机批发</li>
+            <li>空中充值</li>
+            <li>移动业务</li>
+        </ul>
+    </div> 
+
+     <script type="text/javascript">
+    $(function(){
+        // 推广分类筛选遮罩
+        $('.pop-sort').click(function(){
+            var slide = new SlideDialog();
+        });
+    });
+    </script>
+</body>
+
+</html>

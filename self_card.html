@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<title>自带卡优惠</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- 表单验证函数 -->
+    <script type="text/javascript" src="js/validate.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body>
+    <form action="#">
+        <div class="border-list">
+            <div class="title-bar border-bottom">
+                <h4>用户信息填写</h4>
+            </div>
+
+            <div class="step clearfix">
+                <div class="step-logo">
+                    <span class="step-1 step-sprite"></span>
+                    <p>填写相应用户信息</p>
+                    <div class="step-line"></div>
+                </div>
+                <div class="step-logo">
+                    <span class="step-2 step-sprite"></span>
+                    <p>选择套餐档位</p>
+                    <div class="step-line"></div>
+                </div>
+                <div class="step-logo">
+                    <span class="step-3 step-sprite"></span>
+                    <p>提交申请并完成</p>
+                </div>
+            </div>
+            <ul class="form-list border-top">
+                <li>
+                    <label>手机号码</label>
+                    <input class="mobile"  type="tel" placeholder="请输入手机号码">
+                    <p class="motion-shop"><i class="icon-hook-2"></i><span>广州移动</span></p>
+                </li>
+            </ul>
+        </div>
+        <!-- 鉴权方式 -->
+        <div class="bg-show">
+            <div class="title-bar border-bottom">
+                <h4>鉴权方式</h4>
+            </div>
+            <ul class="js-select-mBox select-mBox border-bottom">
+                <li class="active">
+                    <a class="btn-border">服务密码</a>
+                </li>
+                <li>
+                    <a class="btn-border">随机密码</a>  
+                </li>            
+            </ul>
+
+            <div class="mBox-show list-box show">
+                <label>服务密码</label>
+                <input class="list-info" type="password" placeholder="请输入服务密码">
+            </div>
+            <div class="mBox-show list-box">
+                <label>随机密码</label>
+                <input class="list-info" type="password" placeholder="请输入随机密码">
+                <div class="btn-vcode btn-theme">发送验证码</div>
+                <!-- <div class="btn-vcode btn-theme disBtn">剩余60s</div> -->
+            </div>
+        </div>
+
+        <!-- 选择套餐 -->
+        <div class="bg-show">
+            <div class="title-bar border-bottom">
+                <h4>选择套餐</h4>
+            </div>
+            <ul class="js-select-mBox select-mBox border-bottom">
+                <li class="active">
+                    <a class="btn-border">语音套餐</a>
+                </li>
+                <li>
+                    <a class="btn-border">流量套餐</a>  
+                </li>            
+            </ul>
+
+            <div class="mBox-show show">
+                <div class="combo-box ui-border">
+                     <ul class="select-mBox">
+                        <li class="active">
+                            <a class="btn-border">128元</a>
+                        </li>
+                        <li>
+                            <a class="btn-border">268元</a>  
+                        </li>  
+                        <li>
+                            <a class="btn-border">58元</a>  
+                        </li> 
+                        <li>
+                            <a class="btn-border">38元</a>  
+                        </li> 
+                        <li>
+                            <a class="btn-border">588元</a>  
+                        </li> 
+                        <li>
+                            <a class="btn-border">388元</a>  
+                        </li> 
+                        <li>
+                            <a class="btn-border">28元</a>  
+                        </li>           
+                        <li>
+                            <a class="btn-border">10元</a>  
+                        </li> 
+                    </ul>
+                    <div class="combo-content">
+                        <h4>套餐内容</h4>
+                        <p>套餐内当月未消费的剩余流量，可以结转至次月使用，结转流量次月月底失效。若您办理了套餐变更（含档位变更、变更回原套餐）、销号等业务，或者手机号码整月处于停机状态，当月剩余流量将无法结转。当月存在结转流量时，同一类型的流量优先扣减上月结转的剩余流量，再扣减套餐内流量。不同类型的流量，按照原有的扣费顺序扣减，计费规则不变。</p>
+                    </div>
+                </div> 
+            </div>
+            <div class="mBox-show">
+                <div class="combo-box ui-border">
+                     <ul class="select-mBox">
+                        <li class="active">
+                            <a class="btn-border">1G</a>
+                        </li>
+                        <li>
+                            <a class="btn-border">2G</a>  
+                        </li>  
+                        <li>
+                            <a class="btn-border">3G</a>  
+                        </li> 
+                        <li>
+                            <a class="btn-border">500M</a>  
+                        </li> 
+                        <li>
+                            <a class="btn-border">300M</a>  
+                        </li> 
+                        <li>
+                            <a class="btn-border">100M</a>  
+                        </li> 
+                        <li>
+                            <a class="btn-border">50M</a>  
+                        </li>           
+                        <li>
+                            <a class="btn-border">10M</a>  
+                        </li> 
+                    </ul>
+                    <div class="combo-content">
+                        <h4>套餐内容</h4>
+                        <p>套餐内当月未消费的剩余流量，可以结转至次月使用，结转流量次月月底失效。若您办理了套餐变更（含档位变更、变更回原套餐）、销号等业务，或者手机号码整月处于停机状态，当月剩余流量将无法结转。当月存在结转流量时，同一类型的流量优先扣减上月结转的剩余流量，再扣减套餐内流量。不同类型的流量，按照原有的扣费顺序扣减，计费规则不变。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+        <ul class="form-list border-list">
+            <li>
+                <label>交易密码</label>
+                <input type="password" placeholder="请输入交易密码">
+            </li>
+        </ul> 
+      
+        <a id="btn-save" class="btn-green">确认提交</a>
+    </form>
+
+   <script type="text/javascript">
+   $(function(){
+        //表单验证
+        $('#btn-save').click(function(){
+            var telVal = $('.mobile').val();
+            if(!isCellphone(telVal)){
+                $(this).isTip('请输入正确的手机号码');
+            }
+        });
+
+   });
+   </script>
+</body>
+</html>

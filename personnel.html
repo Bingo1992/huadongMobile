@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>个人中心</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+
+<body>
+    <div class="banner">
+         
+        <div class="bg-show">
+            <!-- 头部信息 -->
+            <div class="border-bottom pdt pdb">
+                <div class="list-box">
+                    <div class="per-img">
+                        <img src="images/user.png">
+                    </div>
+                    <div class="list-info">
+                        <h4>用户昵称</h4>
+                        <div class="vip">
+                            <span class="label-yellow">VIP</span>
+                            <span class="font-yellow">三级会员</span>
+                        </div>
+                    </div>
+                    <a class="btn-edit" href="my_data.html">
+                        <i class="icon-edit-bold"></i>
+                        <span>编辑</span>
+                    </a>  
+                </div>            
+            </div>
+
+             <ul class="flex-layout">
+                <li class="border-right">
+                    <a  href="my_balance.html">
+                        <span class="money-sprite"></span>
+                        <span class="list-info">
+                            <p>账户余额</p>
+                            <h3>300.00</h3>
+                        </span> 
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="m-yongjin money-sprite"></span>
+                        <span class="list-info">
+                            <p>我的佣金</p>
+                            <h3>1000.00</h3>
+                        </span>   
+                    </a>
+                </li>
+            </ul>
+        </div> 
+
+        <!-- 订单 -->
+        <div class="bg-show">
+             <a class="list-box" href="order_list.html">
+                <span class="list-info">
+                    <h4>批发订单</h4>
+                </span>
+                <span class="font-gray">全部</span>
+                <i class="icon-right"></i>
+            </a>
+            <ul class="order-state flex-layout border-top">
+                <li>
+                    <a href="order_list.html">
+                        <i class="icon-unproved"></i>
+                        <p>待确认<span class="font-red">2</span></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="order_list.html">
+                        <i class="icon-wallet"></i>
+                        <p>待付款<span class="font-red">2</span></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="order_list.html">
+                        <i class="icon-truck"></i>
+                        <p>待发货<span class="font-red">2</span></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="order_list.html">
+                        <i class="icon-finish"></i>
+                        <p>已完成<span class="font-red">5</span></p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="bg-show">
+             <a class="list-box" href="order_list.html">
+                <span class="list-info">
+                    <h4>充值订单</h4>
+                </span>
+                <span class="font-gray">全部</span>
+                <i class="icon-right"></i>
+            </a>
+            <ul class="order-state flex-layout border-top">
+                <li>
+                    <a href="order_list.html">
+                        <i class="icon-recharge"></i>
+                        <p>充值中<span class="font-red">2</span></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="order_list.html">
+                        <i class="icon-recharge-success"></i>
+                        <p>充值成功<span class="font-red">2</span></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="order_list.html">
+                        <i class="icon-recharge-failure"></i>
+                        <p>充值失败<span class="font-red">2</span></p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+        <!-- 列表 -->
+        <ul class="border-list person-icon">
+            <li>
+                <a class="list-box" href="statement.html">
+                    <span class="list-info">
+                        <h4>往来对账单</h4>
+                    </span>
+                    <i class="icon-right"></i>
+                </a>
+            </li>
+            <li>
+                <a class="list-box" href="my_team.html">
+                    <span class="list-info">
+                        <h4>我的店铺</h4>
+                    </span>
+                    <i class="icon-right"></i>
+                </a>
+            </li>
+            <li>
+                <a class="list-box" href="my_card.html">
+                    <span class="list-info">
+                        <h4>推广二维码</h4>
+                    </span>
+                    <i class="icon-right"></i>
+                </a>
+            </li>
+         
+        </ul>
+    </div>
+       
+       <!-- 底部固定内容 -->
+    <div class="fixed-bottom">
+        <!-- 底部导航 -->
+        <ul class="nav-bar flex-layout border-top">
+            <li>
+                <a href="index.html">
+                    <i class="icon-home"></i>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="wholesale.html">
+                    <i class="icon-mobile"></i>
+                    <p>手机批发</p>
+                </a>
+             </li>   
+             <li>
+                 <a href="recharge.html">
+                    <i class="icon-charge"></i>
+                    <p>空中充值</p>
+                </a>
+             </li>   
+             <li>
+                 <a href="cart.html">
+                    <i class="icon-cart"></i>
+                    <p>购物车</p>
+                </a>
+             </li>
+            <li class="active">
+                <a href="personnel.html">
+                    <i class="icon-user"></i>
+                    <p>个人中心</p>
+                </a>
+            </li> 
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<title>宽带报装</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- 表单验证函数 -->
+    <script type="text/javascript" src="js/validate.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body>
+    <form action="#">
+        <div class="border-list">
+            <div class="title-bar border-bottom">
+                <h4>实名信息填写</h4>
+            </div>
+
+            <div class="step clearfix">
+                <div class="step-logo">
+                    <span class="step-1 step-sprite"></span>
+                    <p>填写相应用户信息</p>
+                    <div class="step-line"></div>
+                </div>
+                <div class="step-logo">
+                    <span class="step-2 step-sprite"></span>
+                    <p>客服主动联系</p>
+                    <div class="step-line"></div>
+                </div>
+                <div class="step-logo">
+                    <span class="step-3 step-sprite"></span>
+                    <p>安排办理上门安装</p>
+                </div>
+            </div>
+
+            <ul class="form-list border-top">
+                <li>
+                    <label>用户名称</label>
+                    <input type="text" placeholder="请输入用户名称">
+                </li>
+                <li>
+                    <label>身份证号</label>
+                    <input type="text" placeholder="请输入16位身份证号码">
+                </li>
+                <li>
+                    <label>手机号码</label>
+                    <input class="mobile"  type="tel" placeholder="请输入手机号码">
+                    <p class="motion-shop"><i class="icon-hook-2"></i><span>广州移动</span></p>
+                </li>
+            </ul>
+        </div>
+
+        <ul class="form-list border-list">
+            <li>
+                <label>交易密码</label>
+                <input type="password" placeholder="请输入交易密码">
+            </li>
+        </ul>
+      
+      
+        <a id="btn-save" class="btn-green">确认提交</a>
+    </form>
+
+   <script type="text/javascript">
+   $(function(){
+        //表单验证
+        $('#btn-save').click(function(){
+            var telVal = $('.mobile').val();
+            if(!isCellphone(telVal)){
+                $(this).isTip('请输入正确的手机号码');
+            }
+        });
+
+   });
+   </script>
+</body>
+</html>

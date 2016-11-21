@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+/*左右结构列表*/
+.hProduct-list {
+	padding: 0 .25rem .5rem .25rem;
+    overflow: hidden;
+	li {
+	    width: 50%;
+	    float: left;
+	}
+	h4 {
+    	// padding: $gauge  $gauge 0  $gauge;
+    	height: 40px;
+    }
+	a {
+		position: relative;
+		display: block;
+		margin: .5rem .25rem 0 .25rem;
+	    width: 7.25rem;
+	    box-sizing: border-box;
+	    &:after {
+	    	@extend .ui-border;
+	    }
+	}
+}
+.hpro-img {
+	width: 7.25rem;
+    height: 7.25rem;
+    background-color: #eee; 
+}
+
+// 用相同html构造左右结构列表
+.large-pro-list {
+	overflow-y: hidden;
+	padding: 0 .25rem .5rem .25rem;
+	box-sizing: border-box;
+	position: relative;
+	&:after {
+    	@extend .border-bottom;
+    }
+	li {
+		width: 50%;
+		float: left;
+		&:after {
+	    	border-bottom:none;
+	    }
+	}
+	a {
+		display: block;
+		margin: .5rem .25rem 0 .25rem;
+	    width: 7.25rem;
+	    padding: 0;
+	    &:after {
+	    	@extend .ui-border;
+	    }
+	}
+	.list-info {
+		display: block;
+		padding: 10px;
+	}
+	.list-img {
+		width: 7.25rem;
+    	height: 5.1rem;
+	}
+}

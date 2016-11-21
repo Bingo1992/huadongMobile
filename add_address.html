@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<title>新增地址</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- 表单验证函数 -->
+    <script type="text/javascript" src="js/validate.js"></script>
+    <!-- 省份城市json库 -->
+    <script type="text/javascript" src="json/PlaceJson.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body>
+    <form action="#">
+        <ul class="form-list border-list">
+            <li>
+                <label>收货人</label>
+                <input class="name" type="text" placeholder="请输入收货人姓名">
+            </li>
+            <li>
+                <label>联系电话</label>
+                <input class="mobile"  type="tel" placeholder="请输入联系电话">
+            </li>
+            <li class="btn-city">
+                <label>所在城市</label>
+                <input class="cityValue nowrap" type="text" placeholder="选择城市" readonly>
+                <i class="icon-right"></i>  
+            </li>
+            <li class="btn-zone">
+                <label>所在地区</label>
+                <input class="zoneValue" type="text" placeholder="选择区县" readonly>
+                <i class="icon-right"></i>  
+            </li>
+            <li>
+                <textarea class="list-info" cols="30" rows="3" placeholder="详细地址"></textarea>
+            </li>
+        </ul>
+
+        <ul class="border-list form-list">
+            <li>
+                <span class="list-info">设为默认地址</span>
+                <div class="slide-btn">
+                    <input class="checkbox" type="checkbox">
+                </div>
+            </li>
+        </ul>
+
+     <!--    <label class="rich-box">
+            <div class="checkbox">
+                <input class="list-info" type="checkbox">
+                <i class="icon-hook"></i>
+            </div>
+            <span>设为默认地址</span>
+        </label> -->
+        <a id="btn-save" class="btn-green">保存</a>
+    </form>
+ 
+     <!-- 选择城市遮罩 -->
+    <div class="Procity-list dialog-list">
+        <a class="return-back border-bottom">
+            <i class="icon-left"></i>
+            <h4>选择城市</h4>
+        </a>
+        <ul class="selProvince dialog-start-list"></ul>
+        <ul class="selCity dialog-end-list"></ul>
+    </div>
+
+    <!-- 选择区县遮罩 -->
+    <div class="zone-list dialog-list">
+        <a class="return-back border-bottom">
+            <i class="icon-left"></i>
+            <h4>选择地区</h4>
+        </a>
+        <ul class="selDistrict dialog-end-list whole-list"></ul>
+    </div>
+
+   <script type="text/javascript">
+   $(function(){
+        //表单验证
+        $('#btn-save').click(function(){
+            var nameVal = $('.name').val();
+            var telVal = $('.mobile').val();
+            if(nameVal==""){
+                $(this).isTip('请输入收货人姓名');
+            }else if(!isCellphone(telVal)){
+                $(this).isTip('请输入正确的联系电话');
+            }
+        });
+
+        //选择城市遮罩
+        $('.btn-city').delegate($(this),'click',function(){
+            var slide = new SlideDialog({
+                dialogList : $('.Procity-list'),
+                slideElm : $('.cityValue')
+            });
+        });
+        //选择区县遮罩
+        $('.btn-zone').delegate($(this),'click',function(){
+            var cityValue = $('.cityValue').val();
+            if (cityValue=="") {
+                $(this).isTip('请先选择城市');
+            }else {
+                var slide = new SlideDialog({
+                    dialogList : $('.zone-list'),
+                    slideElm : $('.zoneValue')
+                });
+            }
+        });
+
+
+        // ------添加省市区内容------
+        var value = null;
+        $.each(province, function (k, p) { 
+            var li = "<li data-id='" + p.ProID + "'>" + p.ProName + "</li>";
+            $(".selProvince").append(li);
+            $(".selProvince li").eq(0).addClass('active');
+        });
+
+        $.each(city, function (k, p) { 
+            if (p.ProID == 1) {
+                var li = "<li data-id='" + p.CityID + "'>" + p.CityName + "</li>";
+                $(".selCity").append(li);
+            }
+        });
+         
+        $(".selProvince").delegate('li','click',function () {
+            var selValue = $(this).attr('data-id'); 
+            $(".selCity li").remove();
+            $.each(city, function (k, p) { 
+                if (p.ProID == selValue) {
+                    var li = "<li data-id='" + p.CityID + "'>" + p.CityName + "</li>";
+                    $(".selCity").append(li);
+                }
+            });
+        });
+         
+        $(".selCity").delegate('li','click',function () {
+            var selValue = $(this).attr('data-id');
+            $('.zoneValue').val("");//重置区县的值
+            $(".selDistrict li").remove();
+             $.each(district, function (k, p) {
+                if (p.CityID == selValue) {
+                    var li = "<li data-id='" + p.CityID + "'>" + p.DisName + "</li>";
+                    $(".selDistrict").append(li);
+                }
+            });  
+        }); 
+        // ------添加省市区内容结束------
+
+   });
+   </script>
+</body>
+</html>

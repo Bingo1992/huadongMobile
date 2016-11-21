@@ -1,0 +1,216 @@
+@charset "utf-8";
+@import "compass";
+@import "partials/default";
+@import "partials/base";
+@import "partials/color";
+@import "partials/sprite";
+@import "partials/layout";
+@import "partials/nav";
+@import "partials/dialog";
+@import "partials/form";
+// @import "partials/list";
+// @import "partials/cart";
+
+
+.white-body {background-color: #fff;}
+/*首页*/
+.aside-title {
+	padding: 10px 0;
+	h3 {
+		text-align: center;
+	    line-height: 30px;
+	}
+	.line {
+		border-bottom: 3px solid #3aa3fb;
+	    display: block;
+	    width: 50px;
+	    height: 0;
+	    overflow: hidden;
+	    margin: 4px auto 0 auto;
+	}
+}
+.ad-bigImg {
+	width: 5.9rem;
+	height: 7.6rem;
+}
+.ad-list {	
+	li {
+		width: 50%;
+		float: left;
+		box-sizing: border-box;
+		padding: $gauge;
+		position: relative;
+		height: 5rem;
+	}
+	img {
+		width: 5rem;
+	    position: absolute;
+	    bottom: 0;
+	    right: 0;
+	}
+	h5,p {line-height: 20px;}
+	&.fl {
+		width: 10rem;
+		text-align: center;
+		li {
+			height: 3.8rem;
+		}
+		img {width: 4rem;}
+	}
+	
+}
+
+/*个人中心*/
+.per-img {
+	@include circle(60px);
+	margin-right: 10px;
+	border: 1px solid $border-color;
+}
+.btn-edit {
+	// position: absolute;
+	// right: 10px;
+	// top: 20px;
+	
+	// padding: 0 6px;
+	// @include height(34px);
+	// border: 1px solid #d5dadd;
+	// border-radius: 4px;
+	@include btnBorder;
+	background-color: #ecf0f3;
+	// color: #666;
+	i {color: #d5dadd;float: left;}
+}
+.order-state {
+	i {
+		color: #96bfee;
+	}
+}
+
+/*地址管理*/
+.btn-address {
+	border-style: dashed;
+	border-color: $color-theme;
+	color: $color-theme;
+}
+
+/*移动业务*/
+.motion-shop {
+	color: #666;
+	display: none;
+	i {
+		color: #6ec884;
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 20px;
+		margin-right: 4px;
+	}
+}
+
+.select-mBox {
+	overflow-y: hidden;
+	font-size: $md-font;
+	li {
+		float: left;
+		&.active .btn-border{
+			color: $color-theme;
+			border-color: $color-theme;
+		}
+	}
+	.btn-border {margin-right: 0;width: 70px;}
+}
+.mBox-show{
+	font-size: $md-font;
+	display: none;
+	label {
+		width: 80px;
+    	display: block;
+	}
+}
+.mBox-show.show {
+	display: -webkit-box !important;
+}
+.btn-vcode {
+	width: 80px;
+	margin: -4px 0;
+	@include height(32px);
+}
+
+// ----流程---
+.step {
+	margin: 10px .5rem;
+}
+.step-logo {
+	float: left;
+    width: 5rem;
+    text-align: center;
+    position: relative;
+    color: #999;
+    font-size: $sm-font;
+}
+.step-line {
+    position: absolute;
+    width: 3rem;
+    height: 4px;
+    overflow: hidden;
+    background-color: #e9ebee;
+    top: .6rem;
+    left: 3.5rem;
+}
+
+.combo-box {
+	// border: 1px solid $border-color;
+	margin: 10px;
+	border-radius: 4px;
+}
+.combo-content {
+	background-color: #e9ebee;
+	border-radius: 4px;
+	padding: 10px;
+	margin: 10px;
+	p{color: #666;text-align: justify;}
+}
+
+/*购物车*/
+.cart-img {
+	width: 80px;
+	height:80px;
+	margin-right: 6px;
+}
+.sm-font {font-size: $sm-font;}
+.calculate-box {
+	background-color: #fff;
+	&.list-box{
+		padding: 4px 0 4px 10px;
+	}
+	.btn-red {
+		margin: -5px 0;
+		border-radius: 0;
+		width: 100px;
+		@include height(54px);
+	}
+}
+
+
+/*推广详情*/
+.tips {
+	color: #6e9acc;
+	background-color: #def1fc;
+	border: 1px solid #96bfee;
+	font-size: $md-font;
+	padding: $gauge;
+	margin: $gauge 0;
+	border-radius: 4px;
+}
+
+/*放最后*/
+.show {display: block;}
+.hide {display: none;}
+.disBtn{pointer-events: none;background-color: #ccc;}
+.more-wp-open {
+    -webkit-transform: translateX(0) translateZ(0) !important;
+    -webkit-transition: all .6s;
+}
+.more-top-open {
+    -webkit-transform: translateY(0) translateZ(0) !important;
+    -webkit-transition: all .6s !important;
+}

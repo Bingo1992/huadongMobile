@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <title>我的资料</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- 表单验证函数 -->
+    <script type="text/javascript" src="js/validate.js"></script>
+    <!-- 省份城市json库 -->
+    <script type="text/javascript" src="json/PlaceJson.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body>
+    <form action="#">
+        <div class="border-list">
+            <div class="title-bar border-bottom">
+                <h4>个人资料</h4>
+            </div>
+            <ul class="form-list">
+                <li>
+                    <label>店主名称</label>
+                    <input class="name" type="text" placeholder="请输入店主名称">
+                </li>
+                <li>
+                    <label>店铺名称</label>
+                    <input type="text" placeholder="请输入店铺名称">
+                </li>
+                <li>
+                    <label>手机号码</label>
+                    <input class="mobile"  type="tel" placeholder="请输入手机号码">
+                </li>
+                <li>
+                    <label>固话号码</label>
+                    <input class="tel"  type="tel" placeholder="请输入固话号码">
+                </li>
+                <li class="btn-city">
+                    <label>店铺城市</label>
+                    <input class="cityValue nowrap" type="text" placeholder="选择城市" readonly>
+                    <i class="icon-right"></i>  
+                </li>
+                <li class="btn-zone">
+                    <label>店铺区域</label>
+                    <input class="zoneValue" type="text" placeholder="选择区域" readonly>
+                    <i class="icon-right"></i>  
+                </li>
+                <li>
+                    <a class="list-info" href="address_manage.html">收货地址</a>
+                    <i class="icon-right"></i> 
+                </li>
+            </ul>
+        </div>
+
+        <a id="btn-save" class="btn-green">保存信息</a>
+    </form>
+ 
+     <!-- 选择城市遮罩 -->
+    <div class="Procity-list dialog-list">
+        <a class="return-back border-bottom">
+            <i class="icon-left"></i>
+            <h4>选择城市</h4>
+        </a>
+        <ul class="selProvince dialog-start-list"></ul>
+        <ul class="selCity dialog-end-list"></ul>
+    </div>
+
+    <!-- 选择区县遮罩 -->
+    <div class="zone-list dialog-list">
+        <a class="return-back border-bottom">
+            <i class="icon-left"></i>
+            <h4>选择地区</h4>
+        </a>
+        <ul class="selDistrict dialog-end-list whole-list"></ul>
+    </div>
+
+   <script type="text/javascript">
+   $(function(){
+        //表单验证
+        $('#btn-save').click(function(){
+            var nameVal = $('.name').val();
+            var mobileVal = $('.mobile').val();
+            var telVal = $('.tel').val();
+            if(nameVal==""){
+                $(this).isTip('请输入收货人姓名');
+            }else if(!isCellphone(mobileVal)){
+                $(this).isTip('请输入正确的手机号码');
+            }else if(!isfixedphone(telVal)) {
+                $(this).isTip('请输入正确的固话号码');
+            }
+        });
+
+        //选择城市遮罩
+        $('.btn-city').delegate($(this),'click',function(){
+            var slide = new SlideDialog({
+                dialogList : $('.Procity-list'),
+                slideElm : $('.cityValue')
+            });
+        });
+        //选择区县遮罩
+        $('.btn-zone').delegate($(this),'click',function(){
+            var cityValue = $('.cityValue').val();
+            if (cityValue=="") {
+                $(this).isTip('请先选择城市');
+            }else {
+                var slide = new SlideDialog({
+                    dialogList : $('.zone-list'),
+                    slideElm : $('.zoneValue')
+                });
+            }
+        });
+
+
+        // ------添加省市区内容------
+        var value = null;
+        $.each(province, function (k, p) { 
+            var li = "<li data-id='" + p.ProID + "'>" + p.ProName + "</li>";
+            $(".selProvince").append(li);
+            $(".selProvince li").eq(0).addClass('active');
+        });
+
+        $.each(city, function (k, p) { 
+            if (p.ProID == 1) {
+                var li = "<li data-id='" + p.CityID + "'>" + p.CityName + "</li>";
+                $(".selCity").append(li);
+            }
+        });
+         
+        $(".selProvince").delegate('li','click',function () {
+            var selValue = $(this).attr('data-id'); 
+            $(".selCity li").remove();
+            $.each(city, function (k, p) { 
+                if (p.ProID == selValue) {
+                    var li = "<li data-id='" + p.CityID + "'>" + p.CityName + "</li>";
+                    $(".selCity").append(li);
+                }
+            });
+        });
+         
+        $(".selCity").delegate('li','click',function () {
+            var selValue = $(this).attr('data-id');
+            $('.zoneValue').val("");//重置区县的值
+            $(".selDistrict li").remove();
+             $.each(district, function (k, p) {
+                if (p.CityID == selValue) {
+                    var li = "<li data-id='" + p.CityID + "'>" + p.DisName + "</li>";
+                    $(".selDistrict").append(li);
+                }
+            });  
+        }); 
+        // ------添加省市区内容结束------
+
+   });
+   </script>
+</body>
+</html>

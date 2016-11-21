@@ -1,0 +1,30 @@
+@charset "utf-8";
+//头部选项卡切换
+.nav-tabs {
+	background-color: #fff;
+	.active {
+		border-bottom: 3px solid $color-theme;
+		a {
+			color: $color-theme;
+		}
+	}
+}
+.tabs-container {
+	display: none;
+}
+// 底部导航
+.nav-bar {
+	background-color: #f9f9f9;
+	i {
+		color: #d5dadd;
+		font-size: 28px;
+	}
+	a {
+		color: #999;
+	}
+	.active a,.active i{
+		color: $color-theme;
+	}
+		
+	
+}

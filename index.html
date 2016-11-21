@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <title>首页</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/swipeSlide.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+
+<body>
+    <div class="banner">
+         <!--banner轮播-->
+        <div class="slide" id="slide">
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="images/banner.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/banner.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/banner.jpg" alt="">
+                    </a>
+                </li>
+            </ul>
+            <div class="dot">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <!--banner end-->
+
+        <div class="bg-show">
+            <ul class="flex-layout pdt pdb">
+                <li>
+                    <a href="wholesale.html">
+                        <div class="s-wholesale index-sprite"></div>
+                        <p>手机批发</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="recharge.html">
+                        <div class="s-recharge index-sprite"></div>
+                        <p>空中充值</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="mobile.html">
+                        <div class="s-mobile index-sprite"></div>
+                        <p>移动业务</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="popularize_center.html">
+                        <div class="s-popularize index-sprite"></div>
+                        <p>推广中心</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="aside-title">
+            <h3>业务推荐与优惠</h3>
+            <span class="line"></span>
+        </div>
+        <div class="bg-show clearfix">
+            <div class="clearfix">
+                <img src="images/ad1.jpg" class="ad-bigImg fl">
+                <ul class="ad-list fl">
+                   <li class="border-right border-bottom">
+                       <h5>小米手机优惠</h5>
+                       <img src="images/1.jpg">
+                   </li> 
+                   <li class="border-bottom">
+                       <h5>信用卡推广</h5>
+                       <img src="images/2.jpg">
+                   </li> 
+                   <li class="border-right">
+                       <h5>4G流量随心享</h5>
+                       <img src="images/4.jpg">
+                   </li> 
+                   <li class="border-right">
+                       <h5>图拉斯超值福袋</h5>
+                       <img src="images/5.jpg">
+                   </li> 
+                </ul>
+            </div>
+                
+        </div>
+
+        <div class="bg-show clearfix">
+            <ul class="ad-list clearfix">
+                <li class="border-right">
+                    <h5>话费充值低至9.9折</h5>
+                    <p class="font-gray">微信扫一扫，充值更方便</p>
+                    <img src="images/3.jpg">
+                </li>
+                <li>
+                    <h5>套餐办理送20元话费</h5>
+                    <p class="font-gray">办理4G套餐，话费免费送</p>
+                    <img src="images/6.jpg">
+                </li>
+            </ul>
+        </div>
+            
+    </div>
+
+    <div class="fixed-bottom">
+        <!-- 底部导航 -->
+        <ul class="nav-bar flex-layout border-top">
+            <li class="active">
+                <a href="index.html">
+                    <i class="icon-home"></i>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="wholesale.html">
+                    <i class="icon-mobile"></i>
+                    <p>手机批发</p>
+                </a>
+             </li>   
+             <li>
+                 <a href="recharge.html">
+                    <i class="icon-charge"></i>
+                    <p>空中充值</p>
+                </a>
+             </li>   
+             <li>
+                 <a href="cart.html">
+                    <i class="icon-cart"></i>
+                    <p>购物车</p>
+                </a>
+             </li>
+            <li>
+                <a href="personnel.html">
+                    <i class="icon-user"></i>
+                    <p>个人中心</p>
+                </a>
+            </li> 
+        </ul>
+    </div>
+       
+
+    <script type="text/javascript">
+    $(function(){
+      //banner图片只有一张时，隐藏圆点
+        window.onload = function() {
+                var len = $('.slide li').length;
+                if (len <= 1) {
+                    $('.dot').addClass('hide');
+                }  
+            }
+        //banner 图片轮播效果
+        $('.slide').swipeSlide({
+            continuousScroll: true,
+            speed: 3000,
+            transitionType: 'cubic-bezier(0.22, 0.69, 0.72, 0.88)',
+            callback: function(i) {
+                $('.dot').children().eq(i).addClass('cur').siblings().removeClass('cur');
+                var dotWidth = $('.dot').width();
+                $('.dot').css('margin-left','-'+dotWidth/2+'px');
+            }
+        });
+
+        
+    });
+    </script>
+</body>
+
+</html>

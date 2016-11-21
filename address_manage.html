@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <title>地址管理</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+
+<body>
+    <ul class="address-list">
+        <li class="bg-show">
+            <div class="rich-box">
+                <div class="horizational-text">
+                    <span class="fl">张三</span>
+                    <span>13800138000</span>
+                </div>
+                <p class="font-gray">广州市天河区天府路307号3楼景心科技股份有限公司景心科技股份有限公司</p>
+            </div>
+            <div class="list-box border-top">
+                <label class="list-info checkbox">
+                    <input type="radio" name="address" checked>
+                    <i class="icon-hook"></i>
+                    <span class="font-gray">设为默认</span>
+                </label>
+                <a class="font-gray pdr" href="add_address.html">
+                    <i class="icon-edit"></i>
+                    <span>编辑</span>
+                </a>
+                <a class="font-gray btn-delete">
+                    <i class="icon-delete"></i>
+                    <span>删除</span>
+                </a>
+            </div>
+        </li>
+        <li class="bg-show">
+            <div class="rich-box">
+                <div class="horizational-text">
+                    <span class="fl">张三</span>
+                    <span>13800138000</span>
+                </div>
+                <p class="font-gray">广州市天河区天府路307号3楼景心科技股份有限公司景心科技股份有限公司</p>
+            </div>
+            <div class="list-box border-top">
+                <label class="list-info">
+                    <div class="checkbox">
+                        <input type="radio" name="address">
+                        <i class="icon-hook"></i>
+                        <span class="font-gray">设为默认</span>
+                    </div>
+                </label>
+                <a class="font-gray pdr" href="add_address.html">
+                    <i class="icon-edit"></i>
+                    <span>编辑</span>
+                </a>
+                <a class="font-gray btn-delete">
+                    <i class="icon-delete"></i>
+                    <span>删除</span>
+                </a>
+            </div>
+        </li>
+    </ul>
+
+    <a href="add_address.html" class="btn-address btn-border">+ 新增地址</a>
+
+     <!-- 删除遮罩 -->
+    <div class="ui-dialog" id="dialog2">
+        <div class="dialog-cnt">
+            <div class="dialog-text">
+                <p class="p-center">确定删除该地址吗？</p>
+            </div>
+            <div class="two-btn">
+                <a class="cancel btn-cancel">取消</a>
+                <a class="confirm btn-red">删除</a>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    $(function(){
+        //删除默认地址
+        $('.btn-delete').click(function(){
+            $(this).showUiDialog('.ui-dialog');
+            var _this = $(this);
+            $('.confirm').unbind('click').click(function(){
+                var $li = _this.closest('li');
+                $li.remove();
+                $('.ui-dialog').removeClass('show');
+            });
+        });
+    });
+    </script>
+</body>
+</html>

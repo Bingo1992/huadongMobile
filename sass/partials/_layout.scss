@@ -1,0 +1,227 @@
+@charset "utf-8";
+/*盒子布局*/
+.list-box {
+    position: relative;
+    display:-webkit-box;
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+    padding: $gauge;  
+    box-sizing: border-box;
+    // i{
+    //     &:nth-child(1){margin-right: $gauge;}
+    // }
+}
+
+.list-img {
+    position: relative;
+    width: 100px;
+    height: 62px;
+    margin-right: $gauge;
+}
+
+.list-info {
+    -webkit-box-flex:1;
+    display: -webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-box-pack:center;
+    // line-height: 24px;
+    p{
+        font-size: $md-font;
+        color: #666;
+        line-height: 22px;
+    }
+}
+
+/*标题*/
+.title-bar {
+    line-height: 40px;
+    h4 {
+        padding-left: 10px;
+        border-left: 4px solid $color-theme;
+    }
+}
+
+/*富文本编辑框*/
+.rich-box {
+    padding: $gauge;
+    box-sizing: border-box;
+    .text,img {
+        padding-bottom: $gauge;
+    }
+}
+
+// .content-list {
+    // li {
+    //     position: relative;
+    //     @extend %mini-border;
+    //     border-top: 1px solid $border-color;
+    //     border-bottom: 1px solid $border-color;
+    //     background-color: #fff;
+    // }
+// }
+
+/* 一排均匀分布 */
+.flex-layout {
+    display:-webkit-box;
+    -webkit-box-orient:horizontal;
+    -webkit-box-align: center;
+    // li{
+    //     -webkit-box-flex:1;
+    //     width: 100%;    
+    //     text-align: center;
+    // }
+    li {
+        padding: 10px 0;
+        display: -webkit-box;
+        -webkit-box-flex: 1;
+        width: 100%;
+        box-sizing: border-box;
+        -webkit-box-pack: center;
+        -webkit-box-align: center;
+        text-align: center;
+    }
+    a{
+        // display: -webkit-box;
+        // display: block;
+        // -webkit-box-flex:1;
+        // width: 100%; 
+        // margin: 5px 0;
+        // position: relative;
+    }
+
+    i[class*='bg-']{
+        color: #fff;
+        @include circle(2.5rem);   
+        display: inline-block;
+        margin-bottom: .2rem;
+        font-size: 1.4rem;
+    }
+    p {
+        font-size: $md-font;
+        line-height: 20px;
+    }
+}
+
+/*九宫格*/
+.grid-layout {
+    width: 100%;
+    overflow: hidden;
+    font-size: $md-font;
+    box-sizing:border-box;
+    li {
+        float: left;
+        width: 33.333%;
+        box-sizing:border-box;
+        position: relative;
+        padding: 1.4rem 0;
+        &:after {
+           @extend .border-bottom:after;
+           border-right: 1px solid $border-color;
+        }
+    }
+    a{
+        display:block;
+        text-align: center;
+    }
+    i{
+        color: $color-theme;
+        // @include circle(2.5rem);   
+        // display: inline-block;
+        // margin-bottom: .2rem;
+        font-size: 1.4rem;
+    }
+    p {line-height: 1.4rem;}
+}
+
+/*--banner图片轮播*/
+.slide {
+    position: relative;
+    width: 100%;
+    height: 6.826rem;
+    overflow: hidden;
+    &:after{
+         content: '';
+        display: block;
+        width: 100%;
+    }
+    ul {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+    }
+    li {
+        list-style: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+        &:first-child {
+            z-index: 1;
+        }
+        img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: auto;
+            border: none;
+        }
+    }
+    .dot {
+        position: absolute;
+        bottom: 0px;
+        z-index: 2;
+        font-size: 0;
+        left: 50%;
+        span {
+            display: inline-block;
+            @include circle(6px);
+            margin: 0 .1rem;
+            background: #000;
+            opacity: .6;
+        }
+        .cur {
+            background-color: #fff;
+            opacity: 1;
+        }
+    }
+}
+
+/*---banner*/
+
+/* ------无内容状态-----*/
+// .nothing {
+//     @extend .fixed-body;
+//     @include box;
+//     i{
+//         font-size: 40px;
+//         color: $color-gray;
+//         margin: 10px auto;
+//     }
+// }
+.result,.nothing {
+    padding: 5rem $gauge*2;
+    text-align: center;
+    i{
+        font-size: 40px;
+        color: $color-gray;
+         margin: 10px auto;
+    }
+    i[class*="bg-"] {
+        @include circle(80px);
+        color: #fff;
+        font-size: 60px;
+       
+    }
+    // p {text-align: left;}
+}
+.nothing,.result {
+    img {margin: 0 auto;}
+    h3{
+        font-weight: bold;
+        line-height: 30px;
+    }
+}

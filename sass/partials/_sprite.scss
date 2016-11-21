@@ -1,0 +1,31 @@
+@charset "utf-8";
+// 首页雪碧图
+.index-sprite {
+	display: block;
+	background-image: url(../images/index.png);
+	background-size: 400% 100%;
+	width: 2.55rem;
+	height: 2.35rem;
+}
+.s-recharge {background-position: 33.333% 0;}
+.s-mobile {background-position: 66.666% 0;}
+.s-popularize,.m-yongjin {background-position: 100% 0;}
+
+.money-sprite {
+	display: inline-block;
+	background-image: url(../images/coin.png);
+	background-size: 200% 100%;
+	width: 2rem;
+	height: 2rem;
+	margin-right: 6px;
+}
+
+.step-sprite {
+    width: 1.4rem;
+    height: 1.4rem;
+    background-image: url(../images/step.png);
+    background-size: 300% 100%;
+    display: inline-block;
+}
+.step-1 {background-position: 100% 0;}
+.step-3 {background-position: 50% 0;}
