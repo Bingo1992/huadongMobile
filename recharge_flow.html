@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <title>空中充值-流量充值</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/validate.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+
+<body>
+    <div class="fixed-top">
+        <ul class="nav-link flex-layout border-bottom">
+            <li class="border-right">
+                <a href="recharge_tel.html">话费充值</a>
+            </li>
+            <li class="active">
+                <a href="#">流量充值</a>
+            </li>
+        </ul>
+        <ul class="nav-tabs flex-layout border-bottom">
+            <li class="active">
+                <a href="#">流量充值</a>
+            </li>
+            <li>
+                <a href="#">流量批量充值</a>
+            </li>
+        </ul>
+    </div>
+    <div class="banner-tt">
+        <!--流量充值 -->
+        <article class="tabs-container show bg-show">
+            <div class="recharge-list">
+               <div class="list-box border-bottom">
+                  <input class="mobile list-info" type="tel" placeholder="请输入充值手机号码">
+                  <p class="motion-shop"><i class="icon-hook-2"></i><span>广州移动</span></p>
+               </div>
+                <h4>充值面额</h4>
+                <div class="discount-tip">
+                    <!-- <i class="rectangle"></i> -->
+                    <span>充值100、200、300元乐享送话费，多充多送！</span>
+                </div>
+                <ul class="select-mBox clearfix">
+                    <li class="active">
+                        <a>
+                            <h3><span>10</span>M</h3>
+                            <p>售价：<span>9.98</span>元</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <h3><span>20</span>M</h3>
+                            <p>售价：<span>19.98</span>元</p>
+                        </a>
+                        <span class="label-discount">惠</span>
+                    </li>
+                    <li>
+                        <a>
+                            <h3><span>30</span>M</h3>
+                            <p>售价：<span>29.98</span>元</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <h3><span>50</span>M</h3>
+                            <p>售价：<span>49.98</span>元</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <h3><span>100</span>M</h3>
+                            <p>售价：<span>99.80</span>元</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <h3><span>200</span>M</h3>
+                            <p>售价：<span>199.60</span>元</p>
+                        </a>
+                    </li>
+                </ul>
+                <div class="list-box border-top">
+                  <input class="list-info" type="password" placeholder="请输入交易密码">
+              </div>
+            </div>
+              
+        </article>
+
+        <!-- 流量批量充值 -->
+        <article class="tabs-container">
+            <table class="recharge-table">
+                <tr>
+                    <td>
+                        <input class="mobile" type="tel" placeholder="请输入手机号码">
+                        <p class="motion-shop"><i class="icon-hook-2"></i><span>广州移动</span></p>
+                    </td>
+                    <td>
+                        <select>
+                            <option>面值100M</option>
+                            <option>面值200M</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="mobile" type="tel" placeholder="请输入手机号码">
+                        <p class="motion-shop"><i class="icon-hook-2"></i><span>广州移动</span></p>
+                    </td>
+                    <td>
+                        <select>
+                            <option>选择面值</option>
+                            <option>面值100M</option>
+                            <option>面值200M</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="mobile" type="tel" placeholder="请输入手机号码">
+                        <p class="motion-shop"><i class="icon-hook-2"></i><span>广州移动</span></p>
+                    </td>
+                    <td>
+                        <select>
+                            <option>选择面值</option>
+                            <option>面值100M</option>
+                            <option>面值200M</option>
+                        </select>
+                        <i class="icon-cancel-bold"></i>
+                    </td>
+                </tr>
+            </table>
+            <button class="btn-addTel">+ 添加号码</button>
+            <div class="recharge-list">
+              <div class="list-box bg-show">
+                  <input class="list-info" type="password" placeholder="请输入交易密码">
+              </div>
+            </div>
+              
+        </article>
+
+        <a class="btn-red" href="result.html">立刻支付<span>9.98</span>元</a>
+        <div class="btn-tip">
+            <p class="btn-border">温馨提示</p>
+        </div>
+    </div>
+
+    <!-- 温馨提示遮罩 -->
+    <div class="ui-dialog">
+        <div class="dialog-cnt">
+            <i class="icon-cancel"></i>
+            <h3>温馨提示</h3>
+            <div class="dialog-content">
+              <p class="font-gray">1、中国移动用户，均可使用银行卡充值业务。<br>
+              2、您在使用银行卡充值时，需提前有开通了网上银行功能的银行卡。<br>
+              3、银行卡充值金额为整数，最高不超过500元，具体网上支付的额度是否支持，由客户的发卡银行决定。<br>
+              4、扣款成功后，所充值金额一般将于10分钟左右到账，遇系统繁忙等情况可能会存在延时到账，充值成功以后，会收到中国移动给您发送的充值短信，如未收到短信，请拨打10086查询。<br>
+              5、您的银行卡已扣款成功后，手机账户充值未成功情况下，中国移动会将退款返还到相关银行卡中。<br>
+              6、请正确填写被充值手机号码和充值金额，在网上提交的充值内容，是具备法律效力的交易指令，您若因输入错误而造成的损失，移动公司不承担任何责任，并且不承诺追回损c失的义务，敬请谅解！<br>
+              7、如您在公共场合进行充值，请注意保护好您的银行卡信息，以免信息泄露给您造成不必要的损失。</p>
+           </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(function() {
+        //选项卡切换
+        $('.nav-tabs li').click(function() {
+            $(this).switchTabs('.nav-tabs li', '.tabs-container');
+        });
+
+        //温馨提示
+        $('.btn-tip').click(function(){
+          $(this).showUiDialog('.ui-dialog');
+        });
+
+        //添加号码
+        $('.btn-addTel').click(function(){
+          var len = $('.show').find('.recharge-table tr').length;
+          if(len < 10){
+            telBox ();
+          }else {
+            $(this).isTip('最多只能添加10个号码');
+          }
+          
+        });
+        //删除号码
+        $('.recharge-table').delegate('.icon-cancel-bold','click',function(){
+          var $tr = $(this).closest('tr');
+          $tr.remove();
+        });
+
+        //添加号码
+        function telBox () {
+          var html = '<tr><td>\
+                        <input class="mobile" type="tel" placeholder="请输入手机号码">\
+                        <p class="motion-shop"><i class="icon-hook-2"></i><span>广州移动</span></p>\
+                    </td><td>\
+                        <select>\
+                            <option>选择面值</option>\
+                            <option>面值100M</option>\
+                            <option>面值200M</option>\
+                        </select>\
+                        <i class="icon-cancel-bold"></i>\
+                    </td></tr>';
+          $('.recharge-table').append(html);
+        }
+    });
+    </script>
+</body>
+
+</html>

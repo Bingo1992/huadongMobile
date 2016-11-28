@@ -1,17 +1,36 @@
 @charset "utf-8";
+//头部链接
+.nav-link {
+	background-color: #fff;
+	font-size: $md-font;
+	.active a{color: $color-theme;}
+	i {
+		color: #ccc;
+		margin: 0 4px;
+		font-size: 18px;
+	}
+}
 //头部选项卡切换
 .nav-tabs {
 	background-color: #fff;
+	font-size: $md-font;
+	li {padding: 0;}
 	.active {
-		border-bottom: 3px solid $color-theme;
 		a {
+			display: block;
+			padding: 10px 4px;
 			color: $color-theme;
+			border-bottom: 3px solid $color-theme;
 		}
 	}
+}
+.nav-link + .nav-tabs {
+	background-color: #e9ebee;
 }
 .tabs-container {
 	display: none;
 }
+
 // 底部导航
 .nav-bar {
 	background-color: #f9f9f9;

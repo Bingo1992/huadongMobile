@@ -46,7 +46,7 @@
         margin: 0 10px;
     }
 }
-.dialog-text{
+.dialog-content{
     padding: 16px $gauge;
     line-height: 20px;
     max-height: 15rem;
@@ -80,9 +80,8 @@
     @extend .fixed-bottom;
     background-color: rgba(255,255,255,.95);
     text-align: center;
-    -webkit-transform: translateY(150%) translateZ(0) !important;
+    -webkit-transform: translateY(150%) translateZ(0);
     -webkit-transition: all .6s;
-    margin: 0;
     z-index: 20;
 }
 
@@ -99,14 +98,14 @@
     width: 50%;
     margin-top: 44px;
     float: left;
-    text-align: center;
     overflow: auto;
     height: 100%;
     li{
         position: relative;
-        padding: 0 1rem;
-        line-height: 40px;
-        box-sizing: border-box;
+        padding: 10px;
+        // line-height: 40px;
+        // box-sizing: border-box;
+        font-size: $md-font;
         &:after {
             @extend .border-bottom;
         }
@@ -120,15 +119,6 @@
 }
 .whole-list {
     width: 100%;
-    li {text-align: left;}
-}
-.province-list ul,.city-list ul,
-.Procity-list ul,.zone-list ul{
-    text-align: left;
-    li {
-        padding: 0 .5rem;
-        font-size: $md-font;
-    }
 }
 
 .return-back {

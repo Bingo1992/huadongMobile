@@ -32,8 +32,8 @@
            return this.Tiphtml(text);
         },
         //判断运营商
-        isShop: function(text){
-            $('.motion-shop').addClass('show').find('span').html(text);
+        isShop: function(self,text){
+            self.siblings('.motion-shop').addClass('show').find('span').html(text);
         },
        
         //弹窗
@@ -59,7 +59,7 @@
 
         hidefixBtmDialog: function(){
             return this.each(function() {
-                $('.fixedBottom-dialog').find('.f-dialog-cnt').removeClass('more-top-open').siblings('.ui-dialog').removeClass('show');
+                $('.fixed-bottom').find('.f-dialog-cnt').removeClass('more-top-open').siblings('.ui-dialog').removeClass('show');
             });
         },
         //底部遮罩
@@ -82,28 +82,28 @@
             });
         },
         //排序筛选
-        switchSortTabs:function(option1,option2){
-            return this.each(function(){
-                var $_this = $(this);
-                var $_i = $(this).find('i');
-                if($_i.hasClass('icon-down')){
-                    $_this.switchTabs(option1,option2)
-                          .find('i').attr('class','icon-up');
-                    $_this.siblings('li').find('i').attr('class','icon-down');
-                    event.stopPropagation();
-                } 
-                // 点击排序，筛选的内容
-                $(option2).find('li').unbind('click').click(function(){
-                    $(this).switchTabs(option1,option2);
-                });
+        // switchSortTabs:function(option1,option2){
+        //     return this.each(function(){
+        //         var $_this = $(this);
+        //         var $_i = $(this).find('i');
+        //         if($_i.hasClass('icon-down')){
+        //             $_this.switchTabs(option1,option2)
+        //                   .find('i').attr('class','icon-up');
+        //             $_this.siblings('li').find('i').attr('class','icon-down');
+        //             event.stopPropagation();
+        //         } 
+        //         // 点击排序，筛选的内容
+        //         $(option2).find('li').unbind('click').click(function(){
+        //             $(this).switchTabs(option1,option2);
+        //         });
 
-                //点击其他地方隐藏遮罩
-                $(document).click(function() {
-                    $(option1).find('i').attr('class','icon-down');
-                    $(option2).removeClass('show');
-                });   
-            });
-        }
+        //         //点击其他地方隐藏遮罩
+        //         $(document).click(function() {
+        //             $(option1).find('i').attr('class','icon-down');
+        //             $(option2).removeClass('show');
+        //         });   
+        //     });
+        // }
     });
 
     //选择遮罩
@@ -134,7 +134,7 @@
     SlideDialog.prototype.init = function(){
         var self = this;
         self.dialogList.addClass('more-wp-open');
-        $('body').addClass('fixed-body');
+        // $('body').addClass('fixed-body');
         //点击左边
         self.startList.delegate('li','click',function(){
             $(this).switchTabs(self.startList.find('li'));
@@ -166,7 +166,7 @@
     SlideDialog.prototype.removeDialog = function(){
         var self = this;
         self.dialogList.removeClass('more-wp-open');
-        $('body').removeClass('fixed-body');
+        // $('body').removeClass('fixed-body');
     };
     window['SlideDialog'] = SlideDialog;
 
@@ -217,6 +217,7 @@
 
 
 $(function(){
+ 
     // --------form表单----------
     //--日期
     $('.date').bind('input propertychange', function (){
@@ -232,29 +233,85 @@ $(function(){
 
     //鉴权方式
     $('.js-select-mBox li').click(function(){
-        $(this).switchTabs('.select-mBox li','.mBox-show');
+        $(this).switchTabs('.js-select-mBox li','.mBox-show');
     });
 
-    //鉴权方式
+    //选择套餐
     $('.select-mBox li').click(function(){
         $(this).switchTabs('.select-mBox li');
     });
 
     //验证手机号运营商
-    $('.mobile').bind('input propertychange', function(){
+    $('body').delegate('.mobile','input propertychange', function(){
         var value = $(this).val();
         if(isCellphone(value)) {
             // $('.motion-shop').addClass('show').find('span').html('广州移动');
-            $(this).isShop('广州移动');
+            $(this).isShop($(this),'广州移动');
         }else {
             $('.motion-shop').removeClass('show');
         }
     });
 
+    //日期查询
+      $('.btn-date').click(function(){
+        $('.date-list').addClass('more-wp-open');
+       
+        $('.btn-check').click(function(){
+          var startVal = $('.startTime').val();
+          var endVal = $('.endTime').val();
+          if(startVal=="" || endVal==""){
+            $(this).isTip('时间不能为空');
+          }else if(startVal > endVal) {
+            $(this).isTip('结束时间不可小于开始时间');
+          }else {
+            $('.date-list').removeClass('more-wp-open');
+            $('.dateValue').html(startVal+' 至 '+endVal);
+          }
+        });
+      });
+      //关闭右部滑出遮罩（日期，品牌'配件筛选）
+      $('.return-back').click(function(){
+        $('.date-list').add('.proSort-list').removeClass('more-wp-open');
+      });
 });
 //input只能输入整数
 function onlynum(){
     if ( ! ((event.keyCode >= 48 && event.keyCode <= 57 ) || (event.keyCode >= 96 && event.keyCode <= 105 ) || (event.keyCode == 8 ))){
         event.returnValue = false ;
     } 
+}
+
+//购物车数量加减
+function minus_plus(){
+    var count = 1;
+    $('.minus').on('touchstart',function(){
+        var $parent = $(this).parent('.amount');
+        var $count = $parent.find('.count');
+        count = $count.val(); //每次点击前先获取input的值
+        if(count<=1){
+            return;
+        }
+        $count.val(--count);
+    });
+
+    $('.plus').on('touchstart',function(){  
+        var $parent = $(this).parent('.amount');
+        var $count = $parent.find('.count');
+        count = $count.val(); //每次点击前先获取input的值
+        $count.val(++count);
+    });
+
+    $('.count').change(function (){
+        if($(this).val()==0){
+            alert('数量不能为0');
+            $(this).val(1);
+        }
+    });
+} 
+
+//删除li元素
+function removeLi(option){
+    var $li = option.closest('li');
+    $li.remove();
+    $('.ui-dialog').removeClass('show');
 }

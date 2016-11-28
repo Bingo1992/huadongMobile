@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <title>手机批发</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+
+<body>
+    <div class="fixed-top">
+        <ul class="nav-tabs flex-layout border-bottom">
+            <li class="active">
+                <a>手机通讯</a>
+            </li>
+            <li>
+                <a>手机配件</a>
+            </li>
+        </ul>
+        <ul class="nav-link flex-layout border-bottom">
+            <li>
+                <a>新款</a>
+            </li>
+            <li>
+                <a>热销</a>
+            </li>
+            <li class="btn-price border-right">
+                <a class="slideValue">价格</a>
+                <i class="icon-triDown"></i>
+            </li>
+            <li class="btn-sort border-right">
+                <i class="icon-sort"></i>
+                <a>筛选</a>
+            </li>
+            <li>
+                <a href="search.html">
+                    <i class="icon-search"></i>搜索
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="banner-ttb">
+        <!-- 购物车列表   -->
+        <ul class="border-list">
+            <li>
+                <a class="list-box">
+                    <img class="cart-img" src="images/cart.jpg">
+                    <!-- 信息 -->
+                    <div class="pro-info list-info show">
+                        <h5 class="nowrap-2">荣耀7(PLK-CLOD)3GB+16GB内存版 电信4G双卡双待双通 <span class="font-orange">典雅灰</span></h5>
+                        <p class="font-red nowrap">
+                            <label class="label-red">满减</label>
+                            <span>新上线活动，手机订满10000立减少50元</span>
+                        </p>
+                        <p>
+                            <span class="label-green">新品</span>
+                            <span class="label-yellow">热销</span>
+                            <span class="label-blue">特价</span>
+                        </p>
+                        <p>
+                            <span class="pdr">批发价: <span class="font-red">￥<span>1499.00</span></span>
+                            </span>
+                            <span class="font-gray">零售价:￥<span>1499.00</span></span>
+                        </p>
+                    </div>
+                </a>
+                <div class="edit-cart clearfix">
+                    <div class="amount fl">
+                        <span class="minus icon-minus"></span>
+                        <input type="text" class="count" value="1" onkeydown="onlynum();">
+                        <span class="plus icon-plus"></span>
+                    </div>
+                    <div class="btn-cart btn-red fr">加入购物车</div>
+                </div>
+            </li>
+            <li>
+                <a class="list-box">
+                    <img class="cart-img" src="images/cart.jpg">
+                    <!-- 信息 -->
+                    <div class="pro-info list-info show">
+                        <h5 class="nowrap-2">荣耀7(PLK-CLOD)3GB+16GB内存版 电信4G双卡双待双通 <span class="font-orange">典雅灰</span></h5>
+                        <p class="font-red nowrap">
+                            <label class="label-red">满减</label>
+                            <span>新上线活动，手机订满10000立减少50元</span></p>
+                        <p>
+                            <span class="pdr">批发价: <span class="font-red">￥<span>1499.00</span></span>
+                            </span>
+                            <span class="font-gray">零售价:￥<span>1499.00</span></span>
+                        </p>
+                    </div>
+                </a>
+                <div class="edit-cart clearfix">
+                    <div class="amount fl">
+                        <span class="minus icon-minus"></span>
+                        <input type="text" class="count" value="1" onkeydown="onlynum();">
+                        <span class="plus icon-plus"></span>
+                    </div>
+                    <div class="btn-cart btn-red fr">加入购物车</div>
+                </div>
+            </li>
+        </ul>
+        <p class="getmore">点击加载更多</p>
+    </div>
+
+    <div class="fixed-bottom">
+        <!-- 底部导航 -->
+        <ul class="nav-bar flex-layout border-top">
+            <li>
+                <a href="index.html">
+                    <i class="icon-home"></i>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li class="active">
+                <a href="wholesale.html">
+                    <i class="icon-mobile"></i>
+                    <p>手机批发</p>
+                </a>
+             </li>   
+             <li>
+                 <a href="recharge_tel.html">
+                    <i class="icon-charge"></i>
+                    <p>空中充值</p>
+                </a>
+             </li>   
+             <li>
+                 <a href="cart.html">
+                    <i class="icon-cart"></i>
+                    <p>购物车</p>
+                </a>
+             </li>
+            <li>
+                <a href="personnel.html">
+                    <i class="icon-user"></i>
+                    <p>个人中心</p>
+                </a>
+            </li> 
+        </ul>
+    </div>
+
+    <!-- 价格选择 -->
+    <div class="priceSort-list dialog-list">
+        <a class="return-back border-bottom">
+            <i class="icon-left"></i>
+            <h4>订单筛选</h4>
+        </a>
+        <ul class="dialog-end-list whole-list">
+            <li>从高到低</li>
+            <li>从低到高</li>
+        </ul>
+    </div>
+    <!-- 筛选 -->
+    <div class="proSort-list dialog-list">
+        <a class="return-back border-bottom">
+            <i class="icon-left"></i>
+            <h4>筛选</h4>
+        </a>
+        <div class="dialog-end-list whole-list">
+            <ul>
+                <li>
+                    <h4>手机品牌</h4>
+                    <div class="sc-list brand-list clearfix">
+                        <a>全部</a>
+                        <a>苹果</a>
+                        <a>华为</a>
+                        <a>小米</a>
+                        <a>三星</a>
+                        <a>魅族</a>
+                        <a>vivo</a>
+                        <a>OPPO</a>
+                    </div>
+                    <p class="get-moreBrand p-center">
+                        <i class="icon-down"></i>
+                    </p>
+                </li>
+                <li>
+                    <h4>网络制式</h4>
+                    <div class="sc-list clearfix">
+                        <a>全部</a>
+                        <a>全网通</a>
+                        <a>移动联通双4G</a>
+                        <a>移动4G</a>
+                        <a>电信4G</a>
+                        <a>联通4G</a>
+                        <a>移动3G</a>
+                        <a>联通3G</a>
+                        <a>电信3G</a>
+                    </div>
+                </li>
+                <li>
+                    <h4>价格区间</h4>
+                    <div class="sc-list clearfix">
+                        <a>全部</a>
+                        <a>0-499</a>
+                        <a>500-999</a>
+                        <a>1000-1999</a>
+                        <a>2000-3299</a>
+                        <a>3300-4699</a>
+                        <a>4700-9999</a>
+                        <a>10000以上</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="fixed-bottom">
+                <div class="two-btn border-top">
+                    <a class="btn-reset btn-default" href="#">重置</a>
+                    <a class="btn-confirm btn-red" href="#">确定</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(function() {
+
+        $('.nav-link li').click(function(){
+            $(this).switchTabs('.nav-link li');
+        });
+        $('.nav-tabs li').click(function(){
+            $(this).switchTabs('.nav-link li');
+        });
+
+        //购物车加减
+        minus_plus();
+        //加入购物车提示语
+        $('.btn-cart').click(function(){
+            $(this).isTip('已加入购物车');
+        })
+
+        //价格选择
+        $('.btn-price').click(function() {
+            var slide = new SlideDialog({
+                dialogList: $('.priceSort-list')
+            });
+        });
+
+        //页面加载时生成剩余的手机品牌
+        var mobileBrand = ['乐视', '努比亚', 'Lenovo', '酷派', 'SONY', 'LG', '小辣椒', '360手机', '乐视', '努比亚', 'Lenovo', '酷派', 'SONY', 'LG', '小辣椒', '360手机', '乐视', '努比亚', 'Lenovo', '酷派', 'SONY', 'LG', '小辣椒', '360手机'];
+        var mobileLen = mobileBrand.length;
+        window.onload = function() {
+            for (var i = 0; i < mobileLen; i++) {
+                $('.brand-list').append('<a class="moreBrand">' + mobileBrand[i] + '</a>');
+                $('.moreBrand').hide();
+            }
+        }
+
+        //筛选
+        $('.btn-sort').click(function() {
+            $('.proSort-list').addClass('more-wp-open');
+            //确定
+            $('.btn-confirm').click(function() {
+                $('.proSort-list').removeClass('more-wp-open');
+            });
+            //重置
+            $('.btn-reset').click(function() {
+                $('.sc-list a').removeClass('active');
+            })
+        });
+
+        //选中筛选的内容
+        $('.sc-list').delegate('a', 'click', function() {
+            $(this).addClass('active').siblings('a').removeClass('active');
+        });
+
+        //获取更多手机品牌
+        $('.get-moreBrand').click(function() {
+            var $i = $(this).find('i');
+            if ($i.hasClass('icon-down')) {
+                // 显示
+                $('.moreBrand').show();
+                $i.attr('class', 'icon-up');
+
+            } else {
+                //隐藏
+                $('.moreBrand').hide();
+                $i.attr('class', 'icon-down');
+            }
+
+        });
+
+    });
+    </script>
+</body>
+
+</html>

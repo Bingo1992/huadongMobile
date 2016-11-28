@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<title>注册页面</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <!-- 表单验证函数 -->
+    <script type="text/javascript" src="js/validate.js"></script>
+</head>
+<body>
+    <form action="#">
+        <ul class="form-list border-list">
+            <li>
+                <label>店主名称</label>
+                <input  type="tel" placeholder="请输入真实姓名">
+            </li>
+            <li>
+                <label>手机号码</label>
+                <input class="mobile" type="tel" placeholder="请输入手机号码">
+            </li>
+            <li class="vcode-box">
+                <label>短信验证码</label>
+                <input type="tel" placeholder="填写验证码">
+                <a class="btn-getCode border-left">获取验证码</a>
+            </li>
+            <li>
+                <label>登录密码</label>
+                <input type="password" placeholder="请输入登录密码">
+            </li>
+           <li>
+                <label>确认密码</label>
+                <input type="password" placeholder="确认密码">
+            </li>
+            
+           
+        </ul>
+        <label class="rich-box" for="protocol">
+            <div class="checkbox">
+                <input class="list-info" type="checkbox" id="protocol">
+                <i class="icon-hook"></i>
+            </div>
+            <span class="font-gray">我已阅读并同意<a class="btn-protocol font-blue" href="#">《华动通讯注册协议》</a></span>
+        </label>
+ 
+         <div class="two-btn">
+            <a href="login.html" class="btn-default">登录</a>
+            <a href="register.html" class="btn-green">注册</a>
+            
+        </div>
+    </form>
+
+
+    <div class="ui-dialog">
+        <div class="dialog-cnt">
+            <i class="icon-cancel"></i>
+            <h3>华动通讯用户注册协议</h3>
+            <div class="dialog-content">
+                <p class="font-gray">本协议是您与京东网站（简称"本站"，网址：www.jd.com）所有者（以下简称为"京东"）之间就京东网站服务等相关事宜所订立的契约，请您仔细阅读本注册协议，您点击"同意并继续"按钮后，本协议即构成对双方有约束力的法律文件。</p>
+                <h4 class="pdt pdb">第1条 本站服务条款的确认和接纳</h4>
+                <p class="font-gray">1.1本站的各项电子服务的所有权和运作权归京东所有。用户同意所有注册协议条款并完成注册程序，才能成为本站的正式用户。用户确认：本协议条款是处理双方权利义务的契约，始终有效，法律另有强制性规定或双方另有特别约定的，依其规定。</p>
+                <p class="font-gray">1.2用户点击同意本协议的，即视为用户确认自己具有享受本站服务、下单购物等相应权利能力和行为能力，能够独立承担法律责任。</p>
+                <p class="font-gray">1.3如果您在18周岁以下，您只能在父母或监护人的监护参与下才能使用本站。</p>
+                <p class="font-gray">1.4京东保留在中华人民共和国大陆地区法施行之法律允许的范围内独自决定拒绝服务、关闭用户账户、清除或编辑内容或取消订单的权利。</p>
+                <h4 class="pdt pdb">第2条 本站服务</h4>
+                <p class="font-gray">2.1京东通过互联网依法为用户提供互联网信息等服务，用户在完全同意本协议及本站规定的情况下，方有权使用本站的相关服务。</p>
+                <p class="font-gray">2.2用户必须自行准备如下设备和承担如下开支：（1）上网设备，包括并不限于电脑或者其他上网终端、调制解调器及其他必备的上网装置；（2）上网开支，包括并不限于网络接入费、上网设备租用费、手机流量费等。</p>
+                <h4 class="pdt pdb">第3条 用户信息</h4>
+                <p class="font-gray">3.1用户应自行诚信向本站提供注册资料，用户同意其提供的注册资料真实、准确、完整、合法有效，用户注册资料如有变动的，应及时更新其注册资料。如果用户提供的注册资料不合法、不真实、不准确、不详尽的，用户需承担因此引起的相应责任及后果，并且京东保留终止用户使用京东各项服务的权利。</p>
+                <p class="font-gray">3.2用户在本站进行浏览、下单购物等活动时，涉及用户真实姓名/名称、通信地址、联系电话、电子邮箱等隐私信息的，本站将予以严格保密，除非得到用户的授权或法律另有规定，本站不会向外界披露用户隐私信息。</p>
+
+           </div>
+        </div>
+    </div>
+ 
+   <script type="text/javascript">
+   $(function(){
+        //表单验证
+        $('#btn-login').click(function(){
+            var telVal = $('.mobile').val();
+            if(!isCellphone(telVal)){
+                $(this).isTip('请输入正确的手机号码');
+            }
+        });
+
+        //协议
+        $('.btn-protocol').click(function(){
+          $(this).showUiDialog('.ui-dialog');
+        });
+  
+        // 获取短信验证码
+        $('.btn-getCode').click(function() {
+           $(this).addClass('disbtn').html('剩余60s');
+        });
+   });
+   </script>
+</body>
+</html>

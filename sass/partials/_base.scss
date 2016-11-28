@@ -27,12 +27,14 @@ $bgMargin: 16px;
 
 .banner{margin-bottom: 80px;}
 .banner-t {margin-top: 60px;}
+.banner-tt {margin-top: 102px;}
 .banner-tb {margin-top: 60px;margin-bottom:160px; }
-
+.banner-ttb {margin-top: 102px;margin-bottom:80px; }
 .getmore {
-    padding: $gauge;
+    padding-bottom: $bgMargin;
     text-align: center;
     color: $color-gray;
+    font-size: $md-font;
 }
 
 %fixed-layout {
@@ -80,16 +82,15 @@ $bgMargin: 16px;
 @mixin btnRadius($bs:40px){
     @include height($bs);
     border-radius: 4px;
-    text-align:center;
+    text-align:center; 
     display: block;
-    
 }
 @mixin btnBorder($bs:34px,$borderColor:#ccc){
     @include btnRadius($bs);
     border: 1px solid $borderColor;
     color: #666;
     padding: 0 10px;
-    box-sizing: border-box;
+    box-sizing: border-box; 
 }
 .btn-theme,.btn-cancel,
 .btn-default,.btn-green,
@@ -142,17 +143,6 @@ i.icon-right,i.icon-up,i.icon-down,i.icon-left{
 
 
 // --public-style---
-::-webkit-scrollbar{width: 5px;}
-::-webkit-scrollbar-track{background-color:#eee;}
-::-webkit-scrollbar-thumb{background-color:#aaa;}
-
-.clearfix:after{
-    content: ".";
-    display: block;
-    clear: both;
-    height: 0;
-    overflow: hidden;
-}
 
 .nowrap {
     max-width: 100%;
@@ -171,6 +161,7 @@ i.icon-right,i.icon-up,i.icon-down,i.icon-left{
 .border-top,
 .border-bottom,
 .border-right,
+.border-left,
 .border-list,
 .border-list li,
 .bg-show,

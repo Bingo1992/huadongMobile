@@ -34,7 +34,7 @@
                     <i class="icon-edit"></i>
                     <span>编辑</span>
                 </a>
-                <a class="font-gray btn-delete">
+                <a class="font-gray js-delete">
                     <i class="icon-delete"></i>
                     <span>删除</span>
                 </a>
@@ -60,7 +60,7 @@
                     <i class="icon-edit"></i>
                     <span>编辑</span>
                 </a>
-                <a class="font-gray btn-delete">
+                <a class="font-gray js-delete">
                     <i class="icon-delete"></i>
                     <span>删除</span>
                 </a>
@@ -68,12 +68,18 @@
         </li>
     </ul>
 
+    <!-- 无内容状态 -->
+     <div class="nothing hide">
+          <i class="icon-add"></i>
+          <h3>暂无地址，赶紧添加吧</h3>
+      </div>
+
     <a href="add_address.html" class="btn-address btn-border">+ 新增地址</a>
 
      <!-- 删除遮罩 -->
-    <div class="ui-dialog" id="dialog2">
+    <div class="delete-dialog ui-dialog">
         <div class="dialog-cnt">
-            <div class="dialog-text">
+            <div class="dialog-content">
                 <p class="p-center">确定删除该地址吗？</p>
             </div>
             <div class="two-btn">
@@ -85,17 +91,21 @@
 
     <script type="text/javascript">
     $(function(){
-        //删除默认地址
-        $('.btn-delete').click(function(){
-            $(this).showUiDialog('.ui-dialog');
+          //删除遮罩购物车列表
+        $('.js-delete').click(function(){
+            $(this).showUiDialog('.delete-dialog');
             var _this = $(this);
             $('.confirm').unbind('click').click(function(){
-                var $li = _this.closest('li');
-                $li.remove();
-                $('.ui-dialog').removeClass('show');
+                 removeLi(_this);
+                 var len = $('.address-list').find('li').length;
+                  if(len==0){
+                    $('.nothing').removeClass('hide');
+                  }
+                
             });
         });
     });
     </script>
+
 </body>
 </html>

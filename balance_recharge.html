@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <title>余额充值</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- 表单验证函数 -->
+    <script type="text/javascript" src="js/validate.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+
+<body>
+    <form action="#">
+        <div class="bg-show">
+            <div class="title-bar border-bottom">
+                <h4>选择支付方式</h4>
+            </div>
+            <div class="pay-list border-bottom clearfix">
+                <ul class="select-mBox">
+                    <li class="active">
+                        <span class="pay-sprite"></span>
+                    </li>
+                    <li>
+                        <span class="yinlian pay-sprite"></span>
+                    </li>
+                    <li>
+                        <span>银行转账</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="step clearfix">
+                <div class="step-logo">
+                    <span class="step-1 step-sprite"></span>
+                    <p>输入充值金额</p>
+                    <div class="step-line"></div>
+                </div>
+                <div class="step-logo">
+                    <span class="step-2 step-sprite"></span>
+                    <p>跳转到银联支付</p>
+                    <div class="step-line"></div>
+                </div>
+                <div class="step-logo">
+                    <span class="step-3 step-sprite"></span>
+                    <p>操作完成并返回</p>
+                </div>
+            </div>
+        </div>
+
+        <ul class="form-list border-list">
+            <li>
+                <label>支付宝号</label>
+                <input type="text" placeholder="请输入支付宝号">
+            </li>
+            <li>
+                <label>充值金额</label>
+                <input type="text" placeholder="请输入充值金额">
+            </li>
+        </ul>
+
+        <ul class="form-list border-list">
+            <li>
+                <label>交易密码</label>
+                <input type="password" placeholder="请输入交易密码">
+            </li>
+        </ul>
+
+        <a id="btn-save" class="btn-red">立刻支付</a>
+    </form>
+    <script type="text/javascript">
+    $(function() {
+        //表单验证
+        $('#btn-save').click(function() {
+           
+        });
+
+    });
+    </script>
+</body>
+
+</html>

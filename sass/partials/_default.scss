@@ -1,9 +1,10 @@
 @charset 'UTF-8';
  // clear default
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,textarea,p,th,td,header,nav,section,article,aside,footer,button,img,a,s,i {
+body,html,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,textarea,p,span,table,tr,th,td,header,nav,section,article,aside,footer,button,img,a,s,i {
     margin: 0;
     padding: 0;
     outline: 0;
+    box-sizing: border-box;
 }
  html {
     font-size: 20px;
@@ -54,12 +55,21 @@ img {
     display: block;
 }
 
-* {
-    box-sizing: border-box;
-}
 
 h5 {font-size: 12px;}
 h4{font-size: 14px;}
 h3{font-size: 16px;}
 h2{font-size: 18px;}
 h1{font-size: 20px;}
+
+::-webkit-scrollbar{width: 3px;}
+::-webkit-scrollbar-track{background-color:#eee;}
+::-webkit-scrollbar-thumb{background-color:#aaa;}
+
+.clearfix:after{
+    content: ".";
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+}

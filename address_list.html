@@ -1,1 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <title>选择地址</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+
+<body>
+	<div class="banner">
+
+        
+        <!-- 地址列表 -->
+		<ul class="border-list form-list address-list">
+	       <li>
+	       		<div class="checkbox">
+	       			<input type="radio" name="address" checked>
+	       			<i class="icon-hook"></i>
+	       		</div>
+	       		<div class="list-info">
+	       			<h4>
+	       				<span>张三</span>
+	       				<span>13800138000</span>
+	       			</h4>
+	       			<p>广州市天河区天府路307号3楼景心科技股份有限公司景心科技股份有限公司</p>
+	       		</div>
+                <div class="js-delete border-left">
+                    <i class="icon-delete pdl"></i>
+                </div>
+	       		
+	       </li>
+	       <li>
+	       		<div class="checkbox">
+	       			<input type="radio" name="address">
+	       			<i class="icon-hook"></i>
+	       		</div>
+	       		<div class="list-info">
+	       			<h4>
+	       				<span>张三</span>
+	       				<span>13800138000</span>
+	       			</h4>
+	       			<p>广州市天河区天府路307号3楼景心科技股份有限公司景心科技股份有限公司</p>
+	       		</div>
+	       		<div class="js-delete border-left">
+                    <i class="icon-delete pdl"></i>
+                </div>
+	       </li>
+	       <li>
+	       		<div class="checkbox">
+	       			<input  type="radio" name="address">
+	       			<i class="icon-hook"></i>
+	       		</div>
+	       		<div class="list-info">
+	       			<h4>
+	       				<span>张三</span>
+	       				<span>13800138000</span>
+	       			</h4>
+	       			<p>广州市天河区天府路307号3楼景心科技股份有限公司景心科技股份有限公司</p>
+	       		</div>
+	       		<div class="js-delete border-left">
+                    <i class="icon-delete pdl"></i>
+                </div>
+	       </li>
+	    </ul>
+        <!-- 地址列表结束 -->
+
+        <!-- 无内容状态 -->
+         <div class="nothing hide">
+              <i class="icon-add"></i>
+              <h3>暂无地址，赶紧添加吧</h3>
+          </div>
+          
+
+	    <a href="add_address.html" class="btn-address btn-border">+ 新增地址</a>
+	</div>	    
+
+
+	<div class="fixed-bottom">
+        <!-- 结算、 -->
+        <div class="calculate-box list-box border-top">
+          <div class="list-info">
+            <h4>合计： <span class="amount font-red">￥<span>4900.00</span></span></h4>
+            <p>已选择<span class="font-red">2</span>件商品</p>
+          </div>
+          <a class="btn-caculate btn-red">结算</a>
+        </div>
+    </div>
+
+    <!-- 删除遮罩 -->
+    <div class="delete-dialog ui-dialog" id="dialog1">
+        <div class="dialog-cnt">
+            <div class="dialog-content">
+                <p class="p-center">确定删除该地址吗？</p>
+            </div>
+            <div class="two-btn">
+                <a class="cancel btn-cancel">取消</a>
+                <a class="confirm btn-red">删除</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 密码遮罩 -->
+    <div class="ui-dialog" id="dialog2">
+        <div class="dialog-cnt">
+            <div class="dialog-content">
+            	<ul class="form-list border-bottom">
+            		<li>
+            			<label>交易密码</label>
+            			<input class="password" type="password" placeholder="请输入交易密码">
+            		</li>
+            	</ul>
+               
+            </div>
+            <div class="two-btn">
+                <a class="cancel btn-cancel">取消</a>
+                <a class="confirm btn-red">确定</a>
+            </div>
+        </div>
+    </div>
+
+     <!-- 删除遮罩 -->
+    <div class="delete-dialog ui-dialog">
+        <div class="dialog-cnt">
+            <div class="dialog-content">
+                <p class="p-center">确定删除该地址吗？</p>
+            </div>
+            <div class="two-btn">
+                <a class="cancel btn-cancel">取消</a>
+                <a class="confirm btn-red">删除</a>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    $(function(){
+          //删除遮罩购物车列表
+        $('.js-delete').click(function(){
+            $(this).showUiDialog('.delete-dialog');
+            var _this = $(this);
+            $('.confirm').unbind('click').click(function(){
+                 removeLi(_this);
+                 var len = $('.address-list').find('li').length;
+                  if(len==0){
+                    $('.nothing').removeClass('hide');
+                  }
+                
+            });
+        });
+        // 结算
+        $('.btn-caculate').click(function(){
+        	$(this).showUiDialog('#dialog2');
+        	$('.confirm').unbind('click').click(function(){
+        		var password = $('.password').val();
+        		if(password==""){
+        			$(this).isTip('密码不能为空');
+        		}else {
+                    $('.ui-dialog').removeClass('show');
+                    window.location.href = "result.html";//跳转到结果页
+                }
+        	})
+        });
+    });
+    </script>
+</body>
+</html>

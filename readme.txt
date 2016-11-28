@@ -1,7 +1,12 @@
 首页：index.html
 手机批发：wholesale.html
-空中充值：recharge.html
+
 购物车：cart.html
+
+空中充值-话费充值：recharge_tel.html
+空中充值-流量充值：recharge_flow.html
+
+
 个人中心：personnel.html
 
 往来对账单：statement.html
@@ -12,6 +17,8 @@
 
 推广中心：popularize_center.html
 推广详情：popularize_detail.html
+
+推广二维码：invite_friend.html
 
 ----移动业务----
 移动业务：mobile.html

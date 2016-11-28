@@ -7,7 +7,7 @@
     }
     label {
         width: 80px;
-        display: block;
+        display: inline-block;
     }
     input {
         @extend .list-info;
@@ -63,16 +63,16 @@ input[type="file"] {
     z-index: 3;
 }
 
-.upload-file {
-	position: relative;
-    overflow: hidden;
-    height: 24px;
-	i{
-		font-size:26px;
-		margin-right: 0 !important;
-		color: #999;
-	}   
-}
+// .upload-file {
+// 	position: relative;
+//     overflow: hidden;
+//     height: 24px;
+// 	i{
+// 		font-size:26px;
+// 		margin-right: 0 !important;
+// 		color: #999;
+// 	}   
+// }
 /*日期*/
 .date {
 	position: relative;
